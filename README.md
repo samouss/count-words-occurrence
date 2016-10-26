@@ -1,6 +1,6 @@
 # Count words occurrence
 
-[![npm version](https://badge.fury.io/js/react-infinite-scroll-list.svg)](https://badge.fury.io/js/react-infinite-scroll-list) [![Build Status](https://travis-ci.org/samouss/react-infinite-list.svg?branch=master)](https://travis-ci.org/samouss/react-infinite-list)
+[![npm version](https://badge.fury.io/js/count-words-occurrence.svg)](https://badge.fury.io/js/count-words-occurrence) [![Build Status](https://travis-ci.org/samouss/count-words-occurrence.svg?branch=master)](https://travis-ci.org/samouss/count-words-occurrence)
 
 ## Installation
 
