@@ -76,4 +76,18 @@ describe('countWords', () => {
 
     result.should.be.deep.equal(expectation);
   });
+
+  it('should count number with custom predicate', () => {
+    const sample = 'Hello Hello Hello hello ok from sample';
+    const isNotHello = x => x !== 'hello';
+
+    const expectation = {
+      from: 1,
+      sample: 1,
+    };
+
+    const result = countWords(sample, { predicates: [isNotHello] });
+
+    result.should.be.deep.equal(expectation);
+  });
 });
