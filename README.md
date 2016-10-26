@@ -44,7 +44,13 @@ Type: `boolean` | default: `false`
 
 Type: `number` | default: `2`
 
-The minimum length of words to count.
+The minimum length of words to count (0 is ignore).
+
+#### **options.predicates**
+
+Type: `Array<(x: string) => boolean>` | default: `[]`
+
+An array of functions to apply to each word for enable custom filters.
 
 ## Run the test
 
