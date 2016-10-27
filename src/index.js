@@ -3,7 +3,7 @@ const isNotEmpty = x => !!x;
 
 export default (sample, { caseSensitive = false, minLength = 2, predicates = [] } = {}) => {
   const applyPredicates = [
-    minLength > 0 ? isLengthMoreThan(minLength) : () => true,
+    isLengthMoreThan(minLength),
     ...predicates,
   ];
 
