@@ -7,10 +7,9 @@ export default (sample, { caseSensitive = false, minLength = 2, predicates = [] 
     ...predicates,
   ];
 
-  return sample
+  return (caseSensitive ? sample : sample.toLowerCase())
     .split(/\s+/)
     .filter(isNotEmpty)
-    .map(x => (caseSensitive ? x : x.toLowerCase()))
     .filter(x => applyPredicates.every(predicate => predicate(x)))
     .reduce((acc, word) => {
       const count = acc[word] || 0;
