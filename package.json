@@ -1,6 +1,6 @@
 {
   "name": "count-words-occurrence",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Count occurrence of words in the given string",
   "main": "lib/index.js",
   "scripts": {
