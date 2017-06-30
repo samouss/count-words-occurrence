@@ -1,14 +1,16 @@
 const isLengthMoreThan = minLength => x => x.length > minLength;
 const isNotEmpty = x => !!x;
 
-export default (sample, { caseSensitive = false, minLength = 2, predicates = [] } = {}) => {
+export default (input, { caseSensitive = false, minLength = 2, predicates = [] } = {}) => {
   const applyPredicates = [
     isNotEmpty,
     isLengthMoreThan(minLength),
     ...predicates,
   ];
 
-  return (caseSensitive ? sample : sample.toLowerCase())
+  const inputWithoutPadding = input.trim();
+
+  return (caseSensitive ? inputWithoutPadding : inputWithoutPadding.toLowerCase())
     .split(/\s+/)
     .filter(x => applyPredicates.every(predicate => predicate(x)))
     .reduce((acc, word) => {
