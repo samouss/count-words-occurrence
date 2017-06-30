@@ -3,13 +3,13 @@ const isNotEmpty = x => !!x;
 
 export default (sample, { caseSensitive = false, minLength = 2, predicates = [] } = {}) => {
   const applyPredicates = [
+    isNotEmpty,
     isLengthMoreThan(minLength),
     ...predicates,
   ];
 
   return (caseSensitive ? sample : sample.toLowerCase())
     .split(/\s+/)
-    .filter(isNotEmpty)
     .filter(x => applyPredicates.every(predicate => predicate(x)))
     .reduce((acc, word) => {
       const count = acc[word] || 0;
