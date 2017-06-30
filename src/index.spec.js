@@ -77,6 +77,15 @@ describe('countWords', () => {
     result.should.be.deep.equal(expectation);
   });
 
+  it('should count number of same word from empty string', () => {
+    const sample = '     ';
+
+    const expectation = {};
+    const result = countWords(sample);
+
+    result.should.be.deep.equal(expectation);
+  });
+
   it('should count number with custom predicate', () => {
     const sample = 'Hello Hello Hello hello ok from sample';
     const isNotHello = x => x !== 'hello';
